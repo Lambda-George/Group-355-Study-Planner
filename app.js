@@ -13,11 +13,17 @@ app.set('view engine', 'ejs')
 app.use(express.json())
 
 // routes
+app.use('/login', login)
+
+app.use('/MainDashboard', timetable)
+
+app.get('/', (req, res) => {
+  res.render('HomeScreen.ejs')
+})
+
 app.get('/hello', (req, res) => {
   res.send('Hello!')
 })
-
-app.use('/login', login)
 
 // keep these two at the bottom
 app.use((req, res) => {

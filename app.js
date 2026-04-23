@@ -12,6 +12,8 @@ app.set('view engine', 'ejs')
 // middleware
 app.use(express.json())
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 // routes
 app.use('/login', login)
 

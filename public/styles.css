@@ -15,6 +15,91 @@ body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+
+/* Main Dashboard */
+
+.heading{
+    color: white;
+    font-size: 80px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dashboard-wrapper{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.main-dashboard-left{
+    width: 600px;
+    height: 1000px;
+    padding: 20px;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.announcements-button{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 50px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.file-drop-zone{
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    background-color: blue;
+}
+
+
+.main-dashboard-middle{
+    width: 800px;
+    height: 800px;
+    /* padding: 20px; */
+    background-color: black;
+    display: block;
+}
+
+.timetable-card{
+    width:600px;
+    height:600px;
+}
+
+.timetable-button{
+    width: 100%;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    cursor: pointer;
+
+}
+
+
+.main-dashboard-right{
+    width: 600px;
+    height: 1000px;
+    padding: 20px;
+    background-color: red;
+}
+
+
+
+
+
 /* Top navigation separation */
 .app-nav {
   position: sticky;

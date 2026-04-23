@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main class="ue-page">
+      <header class="ue-header ue-header--titlebar">
+        <h1 class="ue-title" id="uePageHeading">Upcoming Events</h1>
+        <div class="ue-search">
+          <label class="ue-search__label" for="ueSearchInput">
+            <span class="visually-hidden">Search upcoming events</span>
+            <input
+              type="search"
+              id="ueSearchInput"
+              class="ue-search__input"
+              placeholder="Search events…"
+              autocomplete="off"
+            />
+          </label>
+        </div>
+      </header>
+
+      <section class="ue-layout" aria-label="Upcoming events">
+        <div class="ue-list-pane">
+          <p id="ueListEmpty" class="ue-list-empty" hidden>No events match your search.</p>
+          <div class="ue-list" role="list" id="ueList" aria-label="Upcoming events list"></div>
+        </div>
+
+        <div class="ue-detail-pane" aria-label="Selected event details">
+          <div class="ue-detail-card" id="ueDetailCard">
+            <h3 class="ue-detail-title" id="ueDetailTitle">Select an event</h3>
+            <div class="ue-detail-meta" id="ueDetailMeta"></div>
+            <h4 class="ue-detail-section">Event Info</h4>
+            <p class="ue-detail-info" id="ueDetailInfo">Choose an item on the left to see details here.</p>
+
+            <button class="ue-more-btn" type="button" id="ueMoreBtn" disabled>View more details</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div
+      id="uePopup"
+      class="ue-popup"
+      role="dialog"
+      aria-label="Event details"
+      aria-modal="false"
+      hidden
+    >
+      <div class="ue-popup__titlebar" id="uePopupDragHandle">
+        <span class="ue-popup__title" id="uePopupTitlebarText">Event details</span>
+        <button type="button" class="ue-popup__close" id="uePopupClose" aria-label="Close details window">
+          ×
+        </button>
+      </div>
+      <div class="ue-popup__body">
+        <h3 class="ue-detail-title" id="uePopupTitle">Event</h3>
+        <div class="ue-detail-meta" id="uePopupMeta"></div>
+        <h4 class="ue-detail-section">Event Info</h4>
+        <p class="ue-detail-info" id="uePopupInfo"></p>
+        <h4 class="ue-detail-section">Additional Info</h4>
+        <p class="ue-detail-info" id="uePopupAdditional"></p>
+      </div>
+    </div>
+
+    <script id="ue-events-data" type="application/json"><%- eventsJson %></script>
+    <script src="/js/upcoming-events.js" defer></script>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

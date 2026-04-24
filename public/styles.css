@@ -375,3 +375,76 @@ body {
   }
 }
 
+/*Login Page*/
+.login-body {
+  background: #e8eaf0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+ 
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.login-header {
+  margin-bottom: 24px;
+}
+ 
+.login-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+ 
+.login-layout {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 36px 40px 40px;
+  width: 420px;
+}
+ 
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.login-form-div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ 
+.login-form-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+ 
+.login-form-input {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+ 
+.login-form-btn {
+  margin-top: 8px;
+  padding: 9px 28px;
+  background: #2f4aad;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+ 

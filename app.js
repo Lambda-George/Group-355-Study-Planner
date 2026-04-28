@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 5000
+//const PORT = 5000
 
 // routes
 const login = require('./routes/login')
@@ -13,6 +13,8 @@ app.set('view engine', 'ejs')
 // middleware
 app.use(express.json())
 app.use(express.static('public'))
+
+// app.use(express.static(path.join(__dirname, 'public')))
 
 // routes
 app.use('/login', login)
@@ -38,11 +40,11 @@ app.get('/Deadlines', (req, res) => {
   res.redirect('/UpcomingEvents')
 })
 
-// keep these two at the bottom
+// keep this at the bottom
 app.use((req, res) => {
   res.status(404).render('404')
 })
 
-app.listen(PORT, (req, res) => {
-  console.log(`server running on port ${PORT}...`)
-})
+// app.listen has been moved to index.js!!
+
+module.exports = app

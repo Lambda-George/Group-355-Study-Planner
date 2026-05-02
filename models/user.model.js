@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const bcrypt = require('bcrypt')
 
 const userSchema = new Schema(
   {
@@ -9,15 +10,15 @@ const userSchema = new Schema(
       unique: true,
       lowercase: true,
       trim: true,
-      minLength: 1,
-      maxLength: 20,
+      minlength: 1,
+      maxlength: 20,
     },
 
     password: {
       type: String,
       required: true,
-      minLength: 6,
-      maxLength: 50,
+      minlength: 6,
+      maxlength: 50,
     },
 
     email: {
@@ -33,6 +34,17 @@ const userSchema = new Schema(
     timestamps: true,
   },
 )
+
+// hashing
+userSchema.pre('save', async function () {
+  if (!this.isModified('password')) return
+
+  this.password = await bcrypt.hash(this.password, 10)
+})
+
+userSchema.methods.comparePassword = async function (password) {
+  return await bcrypt.compare(password, this.password)
+}
 
 const User = mongoose.model('User', userSchema)
 

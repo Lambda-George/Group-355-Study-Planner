@@ -5,6 +5,7 @@ const app = express()
 // routes
 const login = require('./routes/login')
 const timetable = require('./routes/timetable')
+const userRouter = require('./routes/user.route.js')
 const { getUpcomingEventsPage } = require('./controllers/upcomingEvents')
 
 // ejs support
@@ -20,6 +21,8 @@ app.use(express.static('public'))
 app.use('/login', login)
 
 app.use('/MainDashboard', timetable)
+
+app.use('/api/v1/users', userRouter)
 
 app.get('/', (req, res) => {
   res.render('HomeScreen.ejs')
